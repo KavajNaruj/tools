@@ -1,0 +1,24 @@
+
+{block content}
+
+<div class="row m-5">
+    <div class="col-6">
+        <form>
+            <div class="form-group">
+                <label for="input"></label>
+                <textarea id="input" name="input" class="form-control" rows="10" placeholder="Add Base64 string to decode" autofocus>{ifset $encoded}{$encoded}{/ifset}</textarea>
+                <input type="hidden" name="direction" value="decode">
+            </div>
+            <button type="submit" class="btn btn-primary">Decode</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <form>
+        <div class="form-group">
+            <label for="input"></label>
+            <textarea id="input" name="input" class="form-control" rows="10" placeholder="Add string to encode to Base64">{ifset $decoded}{$decoded}{/ifset}</textarea>
+            <input type="hidden" name="direction" value="encode">
+        </div>
+        <button type="submit" class="btn btn-primary">Encode</button>
+    </div>
+</div>

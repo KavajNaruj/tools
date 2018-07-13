@@ -1,0 +1,42 @@
+
+{block content}
+
+<div class="row m-5">
+    <div class="col-6">
+        Validator
+        <form action="{link isUuidValid!}">
+            <div class="form-group">
+                <label for="validate"></label>
+                <input id="validate" name="validate" class="form-control" value="{$validate}" autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+    </div>
+    <div class="col-6">
+        Generator
+        <form  action="{link generateUuids!}">
+            <div class="form-group">
+                <label for="count"></label>
+                <select id="count" name="count" class="form-control">
+                    <option n:for="$i = 1; $i < 30; $i++" value="{$i}"{if $i == $count} selected{/if}>{$i}</option>
+                </select>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="quoted" name="quoted" class="form-check-input" value="1">
+                <label class="form-check-label" for="quoted">Quoted</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="commaSeparated" name="commaSeparated" class="form-check-input" value="1">
+                <label class="form-check-label" for="commaSeparated">Comma separated</label>
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+
+        <div n:if="$uuids">
+            <textarea readonly class="form-control" rows="{$count}" id="embedCode">{$uuids}</textarea>
+            <button type="button" class="btn btn-default" data-clipboard-target="#embedCode"><i class="fa fa-upload"></i> Copy to clipboard</button>
+        </div>
+
+
+    </div>
+</div>

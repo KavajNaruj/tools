@@ -1,0 +1,20 @@
+
+{block content}
+
+<div class="row m-5">
+    <div class="col-6">
+        <form>
+            <div class="form-group">
+                <label for="input"></label>
+                <textarea id="input" name="input" class="form-control" rows="25" placeholder="Add JSON to prettify" autofocus>{$input}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="json"></label>
+            <textarea id="json" class="form-control" rows="25" data-aceeditor="json">{$json}</textarea>
+        </div>
+    </div>
+</div>
